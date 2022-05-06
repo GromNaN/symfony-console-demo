@@ -23,7 +23,4 @@ RUN symfony composer install
 RUN mkdir /etc/bash_completion.d && bin/console completion bash > /etc/bash_completion.d/console
 RUN bin/console completion fish > /etc/fish/completions/console.fish
 
-# Fix before https://github.com/symfony/symfony/pull/46220
-COPY console.fish /etc/fish/completions/console.fish
-
 EXPOSE 8000

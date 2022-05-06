@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0f1469d4361c03ed2f84df6a0146d78",
+    "content-hash": "ce8a19459ce6377fb7d71d7510f8bddc",
     "packages": [
         {
             "name": "psr/cache",
@@ -462,16 +462,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.1.0-BETA2",
+            "version": "6.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2a9be9b22169c36f041dfd38997518414ab1a313"
+                "reference": "147f3160e2bd0dc56f497d16b538f90f0994f624"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2a9be9b22169c36f041dfd38997518414ab1a313",
-                "reference": "2a9be9b22169c36f041dfd38997518414ab1a313",
+                "url": "https://api.github.com/repos/symfony/console/zipball/147f3160e2bd0dc56f497d16b538f90f0994f624",
+                "reference": "147f3160e2bd0dc56f497d16b538f90f0994f624",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.1.0-BETA2"
+                "source": "https://github.com/symfony/console/tree/6.1"
             },
             "funding": [
                 {
@@ -554,7 +554,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-22T08:18:23+00:00"
+            "time": "2022-05-05T16:48:47+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -2358,7 +2358,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "symfony/console": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
