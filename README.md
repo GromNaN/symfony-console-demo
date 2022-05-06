@@ -17,20 +17,20 @@ Or with `fish`:
 docker build -t myconsole . && docker run -it myconsole fish -l
 ```
 
-## Examples
+# Examples
 
-### Progress Bar
+## Progress Bar
 
-### Interactive questions
+## Interactive questions
 
-### Secret Input
+## Secret Input
 
-### Read stdin
+## Read stdin
 
-### Lock
+## Lock
 
-### Render table
+## Render table
 
-### Symfony Style or Custom Style
+## Symfony Style or Custom Style
 
 
