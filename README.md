@@ -37,7 +37,7 @@ the `StreamableInputInterface::getStream` for testing.
 $stdin = ($input instanceof StreamableInputInterface ? $input->getStream() : null) ?? STDIN;
 ```
 
-See example [`HeadCommand`](src/HeadCommand.php).
+See example [`HeadCommand`](src/Command/HeadCommand.php).
 
 ## Lock
 
