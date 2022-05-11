@@ -6,7 +6,6 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
-use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -19,7 +18,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  *  - Interactively ask a question with value completion
  *  - Set value to missing argument with interaction
  *  - Use colors in output
- *  - Write errors to stderr
+ *  - Write errors to stderr.
  */
 #[AsCommand(
     name: 'ask-color',
@@ -29,7 +28,7 @@ class AskColorCommand extends Command
 {
     private const COLORS = [
         'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'default', 'gray',
-        'bright-red', 'bright-green', 'bright-yellow', 'bright-blue', 'bright-magenta', 'bright-cyan', 'bright-white'
+        'bright-red', 'bright-green', 'bright-yellow', 'bright-blue', 'bright-magenta', 'bright-cyan', 'bright-white',
     ];
 
     protected function configure(): void
@@ -71,7 +70,7 @@ class AskColorCommand extends Command
             return Command::INVALID;
         }
         $output->getFormatter()->setStyle('color', $outputStyle);
-        $output->writeln('You have just selected: <color> '. $color.' </color>');
+        $output->writeln('You have just selected: <color> '.$color.' </color>');
 
         return Command::SUCCESS;
     }
