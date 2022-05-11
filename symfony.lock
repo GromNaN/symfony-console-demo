@@ -117,6 +117,9 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.25.0"
     },
+    "symfony/process": {
+        "version": "v6.1.0-BETA1"
+    },
     "symfony/routing": {
         "version": "6.1",
         "recipe": {

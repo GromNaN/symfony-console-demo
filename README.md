@@ -23,6 +23,16 @@ docker build -t myconsole . && docker run -it myconsole fish -l
 
 ## Interactive questions
 
+Commands can be interactive: ask questions.
+
+The best practice is to define all arguments and options, so that the command can be used without interaction, and
+ask for all missing values in [`Command::interact`](https://symfony.com/doc/current/console.html#command-lifecycle).
+This is the last place where you can ask for missing options/arguments before validation.
+
+See example [`AskColorCommand`](src/Command/AskColorCommand.php)
+
+Also, Symfony Demo's [`AddUserCommand`](https://github.com/symfony/demo/blob/main/src/Command/AddUserCommand.php)
+
 ## Secret Input
 
 ## Read stdin

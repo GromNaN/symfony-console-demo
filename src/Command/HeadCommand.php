@@ -33,7 +33,7 @@ class HeadCommand extends Command
     {
         // Read and validate option
         $lines = $input->getOption('lines');
-        if (!filter_var($lines, \FILTER_VALIDATE_INT) || $lines < 1) {
+        if (false === filter_var($lines, \FILTER_VALIDATE_INT) || $lines < 0) {
             $output->writeln(sprintf('Invalid line count "%s". A positive integer is expected.', $lines));
 
             return Command::INVALID;
