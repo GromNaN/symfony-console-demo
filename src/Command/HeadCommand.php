@@ -9,7 +9,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Implementation of the `head` command.
@@ -44,7 +43,7 @@ class HeadCommand extends Command
         if ($file = $input->getArgument('file')) {
             $handle = fopen($file, 'r');
         } else {
-            $handle = ($input instanceof StreamableInputInterface ? $input->getStream() : null) ?? STDIN;
+            $handle = ($input instanceof StreamableInputInterface ? $input->getStream() : null) ?? \STDIN;
         }
 
         // Read $lines

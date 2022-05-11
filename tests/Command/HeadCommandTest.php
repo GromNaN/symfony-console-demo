@@ -17,7 +17,7 @@ class HeadCommandTest extends TestCase
         $commandTester->execute([]);
 
         $commandTester->assertCommandIsSuccessful();
-        $this->assertSame(10, substr_count($commandTester->getDisplay(), "\n"));
+        $this->assertSame(10, mb_substr_count($commandTester->getDisplay(), "\n"));
     }
 
     public function testExecute(): void
@@ -30,7 +30,6 @@ class HeadCommandTest extends TestCase
         ]);
 
         $commandTester->assertCommandIsSuccessful();
-        $this->assertSame(7, substr_count($commandTester->getDisplay(), "\n"));
+        $this->assertSame(7, mb_substr_count($commandTester->getDisplay(), "\n"));
     }
-
 }
