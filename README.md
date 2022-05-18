@@ -21,6 +21,10 @@ docker build -t myconsole . && docker run -it myconsole fish -l
 
 ## Progress Bar
 
+Progress Bar 
+
+See example [`FarmingCommand`](src/Command/FarmingCommand.php)
+
 ## Interactive questions
 
 Commands can be interactive: ask questions.
@@ -49,9 +53,19 @@ $stdin = ($input instanceof StreamableInputInterface ? $input->getStream() : nul
 
 See example [`HeadCommand`](src/Command/HeadCommand.php).
 
-## Lock
-
 ## Render table
+
+
+
+## [Hyperlinks](https://symfony.com/blog/new-in-symfony-4-3-console-hyperlinks)
+
+Rendering clickable hyperlinks is one of the most important missing features of Console apps and commands.
+Although most of the terminal emulators auto-detect URLs and allow to click on them with some key combination, it's not
+possible to render clickable text that points to some arbitrary URL.
+
+See example [`ReleasesCommand`](src/Command/ReleasesCommand.php)
+
+## Lock
 
 ## Symfony Style or Custom Style
 

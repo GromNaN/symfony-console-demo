@@ -6,6 +6,7 @@ RUN apk add\
     git\
     bash bash-completion git-bash-completion\
     fish\
+    asciinema\
     && git config --global user.email "you@example.com" && git config --global user.name "Your Name"
 RUN docker-php-ext-configure intl && docker-php-ext-install intl
 
