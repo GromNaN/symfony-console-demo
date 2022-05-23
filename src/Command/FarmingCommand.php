@@ -4,29 +4,24 @@ namespace App\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Exception\InvalidArgumentException;
-use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Helper\ProgressBar;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Demonstrates:
  *  - Progress Bar
- *  - Output sections
+ *  - Output sections.
  */
 #[AsCommand(
-    name: 'farming',
+    name: 'app:farming',
     description: 'Show progression',
 )]
 class FarmingCommand extends Command
 {
-
     protected function configure(): void
     {
         $this->addOption('count', 'c', InputOption::VALUE_REQUIRED, 'Number of chicken to grow', 10_000);
@@ -45,7 +40,7 @@ class FarmingCommand extends Command
         $mainBar->start();
 
         $section1->writeln('Birth...');
-        //
+
         $bar = new ProgressBar($section3);
         $bar->setRedrawFrequency(100);
         $bar->setBarCharacter('🐥');
@@ -59,7 +54,6 @@ class FarmingCommand extends Command
         $mainBar->advance();
         $section1->overwrite('Growth...');
 
-        //
         $bar = new ProgressBar($section3);
         $bar->setRedrawFrequency(100);
         $bar->setBarCharacter('🐔');

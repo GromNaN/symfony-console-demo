@@ -5,23 +5,19 @@ namespace App\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Helper\TableStyle;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
  * Demo of:
  *  - Table
- *  - Links
+ *  - Links.
  */
 #[AsCommand(
-    name: 'releases',
+    name: 'app:releases',
     description: 'Show details of Symfony releases',
 )]
 class ReleasesCommand extends Command
@@ -42,7 +38,6 @@ class ReleasesCommand extends Command
             ->addOption('vertical', null, InputOption::VALUE_NONE, 'Render vertical table')
             ->addOption('style', null, InputOption::VALUE_REQUIRED, 'Table style',
                 'default', ['default', 'borderless', 'compact', 'symfony-style-guide', 'box', 'box-double', 'dump']);
-        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -80,7 +75,7 @@ class ReleasesCommand extends Command
             $versions = $this->httpClient->request('GET', 'https://symfony.com/releases.json')->toArray()['maintained_versions'];
             $releases = [];
             foreach ($versions as $version) {
-                $releases[$version] = $this->httpClient->request('GET', 'https://symfony.com/releases/' . $version . '.json');
+                $releases[$version] = $this->httpClient->request('GET', 'https://symfony.com/releases/'.$version.'.json');
             }
             foreach ($releases as $version => $response) {
                 $release = $response->toArray();

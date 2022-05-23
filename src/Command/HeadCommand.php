@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Demonstrates how to read from stdin and write to stdout.
  */
 #[AsCommand(
-    name: 'head',
+    name: 'app:head',
     description: 'Displays the first few lines of a file.',
 )]
 class HeadCommand extends Command

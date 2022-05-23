@@ -21,7 +21,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  *  - Write errors to stderr.
  */
 #[AsCommand(
-    name: 'ask-color',
+    name: 'app:ask-color',
     description: 'Interactively ask for a color',
 )]
 class AskColorCommand extends Command
