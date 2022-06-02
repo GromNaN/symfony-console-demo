@@ -33,7 +33,8 @@ class AskColorCommand extends Command
 
     protected function configure(): void
     {
-        $this->addArgument('color', InputArgument::REQUIRED, 'Color', null, self::COLORS);
+        $description = 'Color name ('.implode(', ', self::COLORS).')';
+        $this->addArgument('color', InputArgument::REQUIRED, $description, null, self::COLORS);
     }
 
     protected function interact(InputInterface $input, OutputInterface $output)

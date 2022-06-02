@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * This is a standalone console application to demonstrate that everything can be put in a single file.
+ * No Command class: this is quick to create, but not easy to test.
+ */
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app = new Application();
+
+$app->register('hello')
+    ->addArgument('name')
+    ->setCode(function(InputInterface $input, OutputInterface $output) {
+        $text = 'Hello ' . $input->getArgument('name');
+        $output->writeln($text);
+    });
+
+$app->run();
