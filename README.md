@@ -55,8 +55,6 @@ See example [`HeadCommand`](src/Command/HeadCommand.php).
 
 ## Render table
 
-
-
 ## [Hyperlinks](https://symfony.com/blog/new-in-symfony-4-3-console-hyperlinks)
 
 Rendering clickable hyperlinks is one of the most important missing features of Console apps and commands.
@@ -64,6 +62,14 @@ Although most of the terminal emulators auto-detect URLs and allow to click on t
 possible to render clickable text that points to some arbitrary URL.
 
 See example [`ReleasesCommand`](src/Command/ReleasesCommand.php)
+
+## [Signal](https://symfony.com/blog/new-in-symfony-5-2-console-signals)
+
+Signals are an inter-process communication mechanism used by console commands. A signal is an asynchronous notification 
+sent to a process (or to a specific thread within the same process) in order to notify it of an event that occurred.
+For example, when you press `Ctrl + C` in a command, the operating system sends the SIGINT signal to it.
+
+See example [`SignalCommand`](src/Command/SignalCommand.php)
 
 ## Lock
 
