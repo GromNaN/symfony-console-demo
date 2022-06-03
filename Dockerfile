@@ -8,7 +8,7 @@ RUN apk add\
     fish\
     asciinema\
     && git config --global user.email "you@example.com" && git config --global user.name "Your Name"
-RUN docker-php-ext-configure intl && docker-php-ext-install intl
+RUN docker-php-ext-configure intl && docker-php-ext-install intl && docker-php-ext-install pcntl
 
 RUN curl -o symfony-cli.apk -L https://github.com/symfony-cli/symfony-cli/releases/download/v5.4.8/symfony-cli_5.4.8_x86_64.apk \
     && apk add --allow-untrusted symfony-cli.apk\
