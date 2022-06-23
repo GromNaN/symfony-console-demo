@@ -8,13 +8,13 @@ To run the project with Docker.
 With `bash`:
 
 ```console
-docker build -t myconsole . && docker run -it myconsole bash -l
+docker build -t myconsole . && docker run -it --rm myconsole bash -l
 ```
 
 Or with `fish`:
 
 ```console
-docker build -t myconsole . && docker run -it myconsole fish -l
+docker build -t myconsole . && docker run -it --rm myconsole fish -l
 ```
 
 # Examples
